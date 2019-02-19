@@ -4,8 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertTrue;
 
 public class Day2 {
     WebDriver driver;
@@ -35,16 +39,21 @@ public class Day2 {
 
         submitSearch ();
 
+        waitforResultPage ();
+
         assertResultPage ();
 
     }
 
+    private void waitforResultPage() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("resultStats")));
+    }
+
     private void assertResultPage() {
-        WebElement assertResultsStats = driver.findElement(By.id("resultStats"));
-       Boolean isResultsDisplayed = assertResultsStats.isDisplayed();
-       if (isResultsDisplayed) {
-           System.out.println("Search works");}
-       else System.out.println("Search does not work");
+        WebElement resultsStats = driver.findElement(By.id("resultStats"));
+       Boolean isResultsDisplayed = resultsStats.isDisplayed();
+       assertTrue (isResultsDisplayed);
        }
 
 
