@@ -38,7 +38,10 @@ public class Day2Homework {
 
 
     }
- @AfterSuite
+
+
+
+    @AfterSuite
  public void closebrowser (){
         driver.close();
     }
@@ -66,6 +69,7 @@ public class Day2Homework {
             inputTextField.sendKeys (queryString);
 
     }
+    //
 
 
     private void openMainPage() {
