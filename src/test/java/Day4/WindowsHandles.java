@@ -28,7 +28,7 @@ public class WindowsHandles {
 
     @Test
     public void testsabinas() {
-        String url = "http://the-internet.herokuapp.com/windows";
+        String url = "https://the-internet.herokuapp.com/windows";
         driver.get(url);
         openMainpage(url);
         waitForResultPage();
@@ -51,7 +51,7 @@ public class WindowsHandles {
     @Test
     //same as 001 but with explicit wait
     public void test002() {
-        String url = "https://the-internet.herokuapp.com/windows";
+        String url = "http://the-internet.herokuapp.com/windows";
         openMainpage(url);
         clickHyperLink("Click Here");
         waitForSecondPage("handle");
