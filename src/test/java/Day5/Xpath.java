@@ -51,7 +51,7 @@ public class Xpath {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        driver.findElement(By.xpath("//input[@type='text'][position()=2]")).sendKeys("email");
+        driver.findElement(By.xpath("(//input[@type='text'])[position()=2]")).sendKeys("email");
 
         //"//input[@type='text'])[position()=2]"}
 

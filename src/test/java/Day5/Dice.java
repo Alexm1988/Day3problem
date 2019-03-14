@@ -31,7 +31,7 @@ public class Dice {
     //xpath with position method
     public void test002() {
         driver.get("https://www.dice.com/jobs/");
-        driver.findElement(By.xpath("//*[@type='checkbox' and @chktyp='radius'] [position()= 3]")).click();
+        driver.findElement(By.xpath("(//*[@type='checkbox' and @chktyp='radius']) [position()= 3]")).click();
 
     }
 }
